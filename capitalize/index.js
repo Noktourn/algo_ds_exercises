@@ -5,7 +5,15 @@
 //   capitalize("I'm a little tea pot") --> 'I'm A Little Tea Pot'
 //   capitalize('sHoRt AnD sToUt') --> 'Short And Stout'
 
-function capitalize(str) {}
+function capitalize(str) {
+  arr = str.toLowerCase().split(" ");
+
+  arr = arr.map(
+    (word) =>
+      word.substring(0, 1).toUpperCase() + word.substring(1, word.length)
+  );
+  return arr.join(" ");
+}
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
