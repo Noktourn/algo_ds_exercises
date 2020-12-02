@@ -11,7 +11,28 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(n) {
+  let i = 1;
+  while (i < n + 1) {
+    if (i % 5 === 0 && i % 3 === 0) {
+      console.log("fizzbuzz");
+      ++i;
+      continue;
+    }
+    if (i % 5 === 0) {
+      console.log("buzz");
+      ++i;
+      continue;
+    }
+    if (i % 3 === 0) {
+      console.log("fizz");
+      ++i;
+      continue;
+    }
+    console.log(i);
+    ++i;
+  }
+}
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
