@@ -5,7 +5,23 @@
 //   palindrome("Madam") === true
 //   palindrome("love") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+  if (str.length === 1) return true;
+  // str1 = str.toLowerCase();
+  // let str2 = Array.prototype.reduce.call(str1, (acc, char) => char + acc, "");
+  // return str2 == str1;
+  let middle = Math.floor(str.length / 2);
+  let isPal = true;
+  for (let i = 0; i < middle; ++i) {
+    if (str[i].toLowerCase() === str[str.length - 1 - i].toLowerCase()) {
+      continue;
+    } else {
+      isPal = false;
+      break;
+    }
+  }
+  return isPal;
+}
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
