@@ -8,7 +8,25 @@
 //   anagrams('Heart!', 'EARTH') --> True
 //   anagrams('lol', 'lolc') --> False
 
-function anagrams(stringA, stringB) {}
+function anagrams(stringA, stringB) {
+  let str1 = stringA
+    .trim()
+    .toLowerCase()
+    .replace(/[^A-Za-z]/g, "");
+  let len1 = str1.length;
+  let str2 = stringB
+    .trim()
+    .toLowerCase()
+    .replace(/[^A-Za-z]/g, "");
+
+  let len2 = str2.length;
+  if (len1 != len2) return false;
+  let isAnagram = true;
+  for (let i = 0; i < len1; ++i) {
+    isAnagram = str1.includes(str2[i]);
+  }
+  return isAnagram;
+}
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
