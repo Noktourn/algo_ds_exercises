@@ -7,7 +7,16 @@
 //   reverseInt(-13) === -31
 //   reverseInt(-100) === -1
 
-function reverseInt(n) {}
+function reverseInt(n) {
+  if (Math.abs(n) < 10) return n;
+  isNegative = n < 0;
+  let number = "";
+  while (Math.abs(n) > 0) {
+    number += Math.abs(n) % 10;
+    n = Math.floor(Math.abs(n) / 10);
+  }
+  return isNegative ? Number(number) * -1 : Number(number);
+}
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
