@@ -3,7 +3,16 @@
 // maxChar("I loveeeeeee noodles") === "e"
 // maxChar("1337") === "3"
 
-function maxChar(str) {}
+function maxChar(str) {
+  let maxChar = "";
+  let count = 0;
+  let map = {};
+  for (let i = 0; i < str.length; ++i) {
+    map[str[i]] = map[str[i]] + 1 || 1;
+    map[str[i]] > count && (maxChar = str[i]) && (count = map[str[i]]);
+  }
+  return maxChar;
+}
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
