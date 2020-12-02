@@ -4,7 +4,19 @@
 //   reverse('abcd') === 'dcba'
 //   reverse('Hello!') === '!olleH'
 
-function reverse(str) {}
+function reverse(str) {
+  // return str.split("").reverse().join("");
+
+  // let rev = "";
+  // for (let i = 0; i < str.length; ++i) {
+  //   rev = str[i] + rev;
+  // }
+  // return rev;
+
+  // return str.split("").reduce((acc, char) => char + acc, "");
+
+  return Array.prototype.reduce.call(str, (acc, char) => char + acc, "");
+}
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
@@ -29,14 +41,14 @@ function reverse(str) {}
 //                          ______ ______ ______ ______ ______
 //                         |______|______|______|______|______|
 
-mocha.setup('bdd');
+mocha.setup("bdd");
 const { assert } = chai;
 
-describe('String Reversal', () => {
-	it('reverse() correctly reverses string', () => {
-		assert.equal(reverse('ffaa'), 'aaff');
-		assert.equal(reverse('  aaff'), 'ffaa  ');
-	});
+describe("String Reversal", () => {
+  it("reverse() correctly reverses string", () => {
+    assert.equal(reverse("ffaa"), "aaff");
+    assert.equal(reverse("  aaff"), "ffaa  ");
+  });
 });
 
 mocha.run();
